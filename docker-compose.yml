@@ -34,7 +34,7 @@ services:
       - ./postgres_data:/var/lib/postgresql/data  # This line adds the volume
     networks:
       - keycloak-net
-      -
+
 networks:
   keycloak-net:
     driver: bridge
