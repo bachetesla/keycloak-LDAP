@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  freeipa:
+    image: freeipa/freeipa-server:latest
+    container_name: freeipa
+    hostname: freeipa.example.com
+    domainname: example.com
+    environment:
+      - IPA_SERVER_IP=192.168.1.100
+      - IPA_SERVER_HOSTNAME=freeipa.example.com
+      - PASSWORD=YourSecurePassword
+    ports:
+      - "80:80"
+      - "443:443"
+      - "389:389"
+      - "636:636"
+      - "88:88"
+      - "464:464"
+      - "53:53"
+      - "123:123"
+    volumes:
+      - freeipa-data:/data
+      - freeipa-config:/etc/ipa
+    restart: unless-stopped
+
+volumes:
+  freeipa-data:
+  freeipa-config:
