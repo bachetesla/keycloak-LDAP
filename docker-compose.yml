@@ -17,7 +17,7 @@ services:
       JGROUPS_DISCOVERY_PROTOCOL: TCPPING
       JGROUPS_DISCOVERY_PROPERTIES: initial_hosts="172.18.99.234[7600],172.18.99.233[7600]"
     ports:
-      - "8080:8080"
+      - "8085:8080"
     depends_on:
       - postgres
     networks:
@@ -30,9 +30,11 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data  # This line adds the volume
     networks:
       - keycloak-net
+      -
 networks:
   keycloak-net:
     driver: bridge
