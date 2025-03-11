@@ -4,7 +4,7 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:26.1.3
     container_name: keycloak
-    command: start-dev
+    command: start --optimized
     environment:
       KC_DB: ${KC_DB}
       KC_DB_URL: ${KC_DB_URL}
@@ -18,6 +18,11 @@ services:
       JGROUPS_DISCOVERY_EXTERNAL_IP: 172.18.99.234
       JGROUPS_DISCOVERY_PROTOCOL: TCPPING
       JGROUPS_DISCOVERY_PROPERTIES: initial_hosts="172.18.99.234[7600],172.18.99.233[7600]"
+      KC_HTTP_ENABLED: "true"
+      KC_HTTPS_ENABLED: "false"  # Handled by Nginx
+      KC_HOSTNAME: pid.behsacorp.com
+      KC_HOSTNAME_ADMIN: pid.behsacorp.com
+      KC_HOSTNAME_STRICT_HTTPS: "true"
     ports:
       - "8085:8080"
       - "7600:7600"
