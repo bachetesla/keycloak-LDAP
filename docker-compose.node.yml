@@ -19,8 +19,6 @@ services:
     ports:
       - "8085:8080"
       - "7600:7600"
-    depends_on:
-      - postgres
     networks:
       - keycloak-net
 
