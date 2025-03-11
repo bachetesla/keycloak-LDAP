@@ -22,6 +22,12 @@ services:
       KC_HOSTNAME: pid.behsacorp.com
       KC_HOSTNAME_ADMIN: pid.behsacorp.com
       KC_HOSTNAME_STRICT_HTTPS: "true"
+    command:
+      - /bin/sh
+      - -c
+      - |
+        /opt/keycloak/bin/kc.sh build
+        /opt/keycloak/bin/kc.sh start --optimized
     ports:
       - "8085:8080"
       - "7600:7600"
