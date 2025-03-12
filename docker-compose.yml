@@ -14,12 +14,10 @@ services:
       KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_BOOTSTRAP_ADMIN_PASSWORD}
       KC_HTTP_PORT: ${KC_HTTP_PORT}
       KC_PROXY_HEADERS: forwarded
-      KC_PROXY: edge
       KC_HTTP_ENABLED: "true"
       KC_HTTPS_ENABLED: "false"  # Handled by Nginx
       KC_HOSTNAME: https://idp.behsacorp.com
       KC_HOSTNAME_ADMIN: https://idp.behsacorp.com
-      KC_HOSTNAME_STRICT_HTTPS: "false"
       JGROUPS_DISCOVERY_EXTERNAL_IP: 172.18.99.234
       JGROUPS_DISCOVERY_PROTOCOL: TCPPING
       JGROUPS_DISCOVERY_PROPERTIES: '172.18.99.234[7600],172.18.99.233[7600]'
