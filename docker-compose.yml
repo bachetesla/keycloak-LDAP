@@ -35,7 +35,6 @@ services:
       - ./cache-ispn-jdbc-ping.xml:/opt/keycloak/conf/cache-ispn-jdbc-ping.xml
     extra_hosts:
       - "ipa01.idm.behsacorp.com:172.18.99.234"
-    network_mode: "host"
 
   postgres:
     image: docker.arvancloud.ir/postgres:16

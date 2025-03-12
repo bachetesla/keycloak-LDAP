@@ -32,7 +32,6 @@ services:
       - ./themes/behsa:/opt/keycloak/themes/behsa
       - ./discovery:/opt/jboss/tools/cli/jgroups/discovery/
       - ./cache-ispn-jdbc-ping.xml:/opt/keycloak/conf/cache-ispn-jdbc-ping.xml
-    network_mode: "host"
 
 networks:
   keycloak-net:
