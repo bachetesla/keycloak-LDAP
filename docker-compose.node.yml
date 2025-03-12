@@ -15,13 +15,15 @@ services:
       KC_HTTP_PORT: ${KC_HTTP_PORT}
       KC_PROXY_HEADERS: forwarded
       KC_PROXY: edge
-      JGROUPS_DISCOVERY_EXTERNAL_IP: 172.18.99.233
-      JGROUPS_DISCOVERY_PROTOCOL: JDBC_PING
       KC_HTTP_ENABLED: "true"
       KC_HTTPS_ENABLED: "false"  # Handled by Nginx
       KC_HOSTNAME: https://idp.behsacorp.com
       KC_HOSTNAME_ADMIN: https://idp.behsacorp.com
       KC_HOSTNAME_STRICT_HTTPS: "true"
+      JGROUPS_DISCOVERY_EXTERNAL_IP: 172.18.99.233
+      JGROUPS_DISCOVERY_PROTOCOL: TCPPING
+      JGROUPS_DISCOVERY_PROPERTIES: initial_hosts="172.18.99.234[7600],172.18.99.233[7600]"
+
 
     ports:
       - "8085:8080"
