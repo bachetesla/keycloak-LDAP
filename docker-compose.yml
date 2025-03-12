@@ -45,11 +45,6 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ./postgres_data:/var/lib/postgresql/data  # This line adds the volume
-    networks:
-      - keycloak-net
     ports:
       - "5432:5432"
 
-networks:
-  keycloak-net:
-    driver: bridge

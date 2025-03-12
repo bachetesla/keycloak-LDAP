@@ -33,6 +33,3 @@ services:
       - ./discovery:/opt/jboss/tools/cli/jgroups/discovery/
       - ./cache-ispn-jdbc-ping.xml:/opt/keycloak/conf/cache-ispn-jdbc-ping.xml
 
-networks:
-  keycloak-net:
-    driver: bridge
