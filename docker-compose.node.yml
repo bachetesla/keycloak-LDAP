@@ -21,7 +21,8 @@ services:
       KC_HOSTNAME_ADMIN: https://idp.behsacorp.com
       KC_HOSTNAME_STRICT_HTTPS: "true"
       JGROUPS_DISCOVERY_EXTERNAL_IP: 172.18.99.233
-      JGROUPS_DISCOVERY_PROTOCOL: PING
+      JGROUPS_DISCOVERY_PROTOCOL: JDBC_PING
+      KC_CACHE_CONFIG_FILE: cache-ispn-jdbc-ping.xml
     ports:
       - "8085:8080"
       - "7600:7600"
@@ -31,6 +32,7 @@ services:
     volumes:
       - ./themes/behsa:/opt/keycloak/themes/behsa
       - ./discovery:/opt/jboss/tools/cli/jgroups/discovery/
+      - ./cache-ispn-jdbc-ping.xml:/opt/keycloak/conf/cache-ispn-jdbc-ping.xml
     network_mode: "host"
 
 networks:
