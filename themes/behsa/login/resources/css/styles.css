@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+
 :root {
     --keycloak-logo-url: url('../img/behsa-logo.png');
     --keycloak-bg-logo-url: url("../img/back.jpg");
     --keycloak-logo-height: 80px;
     --keycloak-logo-width: 200px;
+}
+
+*{
+    font-family: "Vazirmatn", sans-serif!important;
 }
 
 .pf-v5-c-login__container {
