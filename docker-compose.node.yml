@@ -27,6 +27,7 @@ services:
     ports:
       - "8085:8080"
       - "7600:7600"
+      - "57800:57800"
     networks:
       - keycloak-net
     extra_hosts:
