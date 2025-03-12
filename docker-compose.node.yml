@@ -27,12 +27,11 @@ services:
       - "8085:8080"
       - "7600:7600"
       - "57800:57800"
-    networks:
-      - keycloak-net
     extra_hosts:
       - "ipa01.idm.behsacorp.com:172.18.99.234"
     volumes:
       - ./themes/behsa:/opt/keycloak/themes/behsa
+    network_mode: "host"
 
 networks:
   keycloak-net:
