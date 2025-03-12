@@ -21,7 +21,7 @@ services:
       KC_HOSTNAME_ADMIN: https://idp.behsacorp.com
       KC_HOSTNAME_STRICT_HTTPS: "true"
       JGROUPS_DISCOVERY_EXTERNAL_IP: 172.18.99.233
-      JGROUPS_DISCOVERY_PROTOCOL: JDBC_PING
+      JGROUPS_DISCOVERY_PROTOCOL: PING
     ports:
       - "8085:8080"
       - "7600:7600"
