@@ -4,7 +4,7 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:26.1.3
     container_name: keycloak
-    command: start
+    command: start-dev
     environment:
       KC_DB: ${KC_DB}
       KC_DB_URL: ${KC_DB_URL}
