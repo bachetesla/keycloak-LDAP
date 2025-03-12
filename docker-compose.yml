@@ -22,7 +22,6 @@ services:
       KC_HOSTNAME: https://idp.behsacorp.com
       KC_HOSTNAME_ADMIN: https://idp.behsacorp.com
       KC_HOSTNAME_STRICT_HTTPS: "false"
-      KC_LOG_LEVEL: INFO,org.infinispan:DEBUG,org.jgroups:DEBUG
     ports:
       - "8085:8080"
       - "7600:7600"
