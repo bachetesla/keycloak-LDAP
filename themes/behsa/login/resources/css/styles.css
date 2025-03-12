@@ -7,9 +7,11 @@
     --keycloak-logo-width: 200px;
 }
 
-*{
+h1,h2,h3,h4,h5,h6, span{
     font-family: "Vazirmatn", sans-serif!important;
 }
+
+
 
 .pf-v5-c-login__container {
     grid-template-columns: 34rem;
