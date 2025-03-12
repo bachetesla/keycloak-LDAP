@@ -29,12 +29,11 @@ services:
       - "57800:57800"
     depends_on:
       - postgres
-    networks:
-      - keycloak-net
     volumes:
       - ./themes/behsa:/opt/keycloak/themes/behsa
     extra_hosts:
       - "ipa01.idm.behsacorp.com:172.18.99.234"
+    network_mode: "host"
 
   postgres:
     image: docker.arvancloud.ir/postgres:16
