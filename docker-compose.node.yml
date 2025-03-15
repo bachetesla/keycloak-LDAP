@@ -12,7 +12,7 @@ services:
       KC_DB_PASSWORD: ${KC_DB_PASSWORD}
       KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_BOOTSTRAP_ADMIN_USERNAME}
       KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_BOOTSTRAP_ADMIN_PASSWORD}
-      KC_HTTP_PORT: ${KC_HTTP_PORT}
+      KC_HTTP_PORT: 8085
       KC_PROXY_HEADERS: forwarded
       KC_HTTP_ENABLED: "true"
       KC_HTTPS_ENABLED: "false"  # Handled by Nginx
@@ -20,7 +20,7 @@ services:
       KC_HOSTNAME_ADMIN: https://idp.behsacorp.com
       KC_CACHE_CONFIG_FILE: cache-ispn-jdbc-ping.xml
     ports:
-      - "8085:8080"
+      - "8085:8085"
       - "7600:7600"
       - "7800:7800"
       - "57800:57800"
