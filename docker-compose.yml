@@ -4,7 +4,7 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:26.1.3
     container_name: keycloak
-    command: start
+    command: start --cache=ispn
     environment:
       KC_DB: ${KC_DB}
       KC_DB_URL: ${KC_DB_URL}
@@ -18,9 +18,7 @@ services:
       KC_HTTPS_ENABLED: "false"  # Handled by Nginx
       KC_HOSTNAME: https://idp.behsacorp.com
       KC_HOSTNAME_ADMIN: https://idp.behsacorp.com
-      JGROUPS_DISCOVERY_EXTERNAL_IP: 172.18.99.234
-      JGROUPS_DISCOVERY_PROTOCOL: TCPPING
-      JGROUPS_DISCOVERY_PROPERTIES: '172.18.99.234[7600]'
+      KC_CACHE_CONFIG_FILE: cache-ispn-jdbc-ping.xml
     ports:
       - "8085:8080"
       - "7600:7600"
@@ -32,7 +30,7 @@ services:
       - ./themes/behsa:/opt/keycloak/themes/behsa
       - ./discovery/TCPPING.cli:/opt/jboss/tools/cli/jgroups/discovery/TCPPING.cli
       #- ./discovery:/opt/jboss/tools/cli/jgroups/discovery/
-      - ./cache-ispn-jdbc-ping.xml:/opt/keycloak/conf/cache-ispn-jdbc-ping.xml
+      - ./discovery/cache-ispn-jdbc-ping.xml:/opt/keycloak/conf/cache-ispn-jdbc-ping.xml
     extra_hosts:
       - "ipa01.idm.behsacorp.com:172.18.99.234"
 
