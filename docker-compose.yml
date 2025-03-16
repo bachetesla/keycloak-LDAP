@@ -12,7 +12,7 @@ services:
       KC_DB_PASSWORD: ${KC_DB_PASSWORD}
       KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_BOOTSTRAP_ADMIN_USERNAME}
       KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_BOOTSTRAP_ADMIN_PASSWORD}
-      KC_HTTP_PORT: 8085
+      KC_HTTP_PORT: 8081
       KC_PROXY_HEADERS: forwarded
       KC_HTTP_ENABLED: "true"
       KC_HTTPS_ENABLED: "false"  # Handled by Nginx
@@ -21,7 +21,6 @@ services:
       KC_CACHE_CONFIG_FILE: cache-ispn-jdbc-ping.xml
       PROXY_ADDRESS_FORWARDING: true
       KC_SPI_STICKY_SESSION_ENCODER_INFINISPAN_SHOULD_ATTACH_ROUTE: false
-
     ports:
       - "8085:8085"
       - "7600:7600"
@@ -32,7 +31,6 @@ services:
     volumes:
       - ./themes/behsa:/opt/keycloak/themes/behsa
       - ./discovery/TCPPING.cli:/opt/jboss/tools/cli/jgroups/discovery/TCPPING.cli
-      #- ./discovery:/opt/jboss/tools/cli/jgroups/discovery/
       - ./discovery/cache-ispn-jdbc-ping.xml:/opt/keycloak/conf/cache-ispn-jdbc-ping.xml
     extra_hosts:
       - "ipa01.idm.behsacorp.com:172.18.99.234"
@@ -49,3 +47,16 @@ services:
     ports:
       - "5432:5432"
 
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "8085:8085"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl  # If you have SSL certificates
+    depends_on:
+      - keycloak
+    extra_hosts:
+      - "ipa01.idm.behsacorp.com:172.18.99.234"
