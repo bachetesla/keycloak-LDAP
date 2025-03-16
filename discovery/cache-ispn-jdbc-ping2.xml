@@ -89,13 +89,13 @@
         </distributed-cache>
 
         <!-- 🔹 Authorization Cache (Local) -->
-        <distributed-cache owners="2" name="authorization" >
+        <local-cache name="authorization" >
             <encoding>
                 <key media-type="application/x-java-object"/>
                 <value media-type="application/x-java-object"/>
             </encoding>
             <memory max-count="10000"/>
-        </distributed-cache>
+        </local-cache>
 
         <!-- 🔹 Work Cache (Replicated) -->
         <replicated-cache name="work">
