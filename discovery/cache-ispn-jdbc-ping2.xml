@@ -41,7 +41,7 @@
         <metrics names-as-tags="true" />
 
         <!-- 🔹 Cache for Realms (Local, no replication needed) -->
-        <distributed-cache owners="2" name="realms" simple-cache="true">
+        <distributed-cache owners="2" name="realms" >
             <encoding>
                 <key media-type="application/x-java-object"/>
                 <value media-type="application/x-java-object"/>
@@ -50,7 +50,7 @@
         </distributed-cache>
 
         <!-- 🔹 Cache for Users (Local, no replication needed) -->
-        <distributed-cache name="users" owners="2" simple-cache="true">
+        <distributed-cache name="users" owners="2" >
             <encoding>
                 <key media-type="application/x-java-object"/>
                 <value media-type="application/x-java-object"/>
@@ -89,7 +89,7 @@
         </distributed-cache>
 
         <!-- 🔹 Authorization Cache (Local) -->
-        <distributed-cache name="authorization" simple-cache="true" owners="2">
+        <distributed-cache name="authorization"  owners="2">
             <encoding>
                 <key media-type="application/x-java-object"/>
                 <value media-type="application/x-java-object"/>
