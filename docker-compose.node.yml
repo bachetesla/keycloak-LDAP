@@ -14,8 +14,8 @@ services:
       KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_BOOTSTRAP_ADMIN_PASSWORD}
       KC_HTTP_PORT: 8085
       KC_PROXY_HEADERS: forwarded
-      KC_HTTP_ENABLED: "false"
-      KC_HTTPS_ENABLED: "true"  # Handled by Nginx
+      KC_HTTP_ENABLED: "true"
+      KC_HTTPS_ENABLED: "false"  # Handled by Nginx
       KC_HOSTNAME: https://idp.behsacorp.com
       KC_HOSTNAME_ADMIN: https://idp.behsacorp.com
       KC_CACHE_CONFIG_FILE: cache-ispn-jdbc-ping.xml
