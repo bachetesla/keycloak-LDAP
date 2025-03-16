@@ -7,7 +7,7 @@
     --keycloak-logo-width: 200px;
 }
 
-h1,h2,h3,h4,h5,h6, span,.pf-m-primary{
+h1,h2,h3,h4,h5,h6, span,.pf-m-primary, p{
     font-family: "Vazirmatn", sans-serif!important;
 }
 
